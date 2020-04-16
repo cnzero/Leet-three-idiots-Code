@@ -1,0 +1,5 @@
+% ignore vscode settings
+*.vscode*
+
+% python cache files
+*.pyc*
