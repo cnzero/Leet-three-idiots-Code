@@ -15,3 +15,9 @@ LeetCode Solutions and Discussions
 1. 图片、视频、GIF等素材，请放到根目录的`utils`文件夹内，在需要的解题文件中正确索引即可；
 2. 尚不清楚GitHub的markdown文件里对LaTeX公式的渲染效果如何，请测试之。
     公式的可选方案：1）图片，2）LaTeX，3）很多地方的公式应该比较简单，直接纯字母表达也行。
+    LaTeX公式在GitHub中并不能很好的渲染，目前查到的解决办法如下：
+    1. 采用`![](http://latex.codecogs.com/gif.latex?a^2+b^2=c^2)`的API。但我觉得有些麻烦了，来回折腾。
+    2. 舍弃在网页端看LaTeX公式的效果，而将文件在本地VScode中预览时，使用Markdown Preview Enhanced等插件，可以直接对LaTeX公式渲染处结果；
+    3. Chrome端有一些插件，如tex（未实测），可以在浏览器端，将Markdown中的公式渲染出来。
+
+    目前建议采用第二个方案，本地编写Markdown文件时，采用最接的方式插入LaTeX公式，本地渲染自己看效果。
