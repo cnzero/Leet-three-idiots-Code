@@ -22,3 +22,62 @@
 输入：[1,8,6,2,5,4,8,3,7]
 输出：49
 
+
+## 方法一：暴力法   通过47/50  超时 时间复杂度O(n^2)
+
+
+```python
+class Solution(object):
+    def maxArea(self, height):
+        """
+        :type height: List[int]
+        :rtype: int
+        """
+        output = 0
+        n = len(height)
+        for i in range(0,n-1):
+            for j in range(i,n):
+                temp = min(height[i],height[j])
+                if (temp*(j-i)) > output:
+                    output = temp*(j-i)
+        return output
+s1 = Solution()
+print(s1.maxArea([1,8,6,2,5,4,8,3,7]))
+```
+
+    49
+    
+
+## 方法二：动态规划 时间复杂度 O(n)
+
+两头向内检索
+
+$ output = max(output,min(height[i],height[j])*(j-i)) $
+
+由于面积由短的柱子决定，所以只需要将短的方向向内检索即可
+
+
+```python
+class Solution2(object):
+    def maxArea(self, height):
+        """
+        :type height: List[int]
+        :rtype: int
+        """
+        n = len(height)
+        output = 0
+        i,j = 0,n-1
+        while i < j:
+            output = max(output,min(height[i],height[j])*(j-i))
+            if height[i]<height[j]:
+                i = i+1
+            else:
+                j=j-1
+        return output
+    
+s2 = Solution2()
+print(s2.maxArea([1,8,6,2,5,4,8,3,7]))
+```
+
+    49
+    
